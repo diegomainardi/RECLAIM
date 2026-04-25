@@ -10,49 +10,49 @@
 <style>
   :root {
     /* ── Base ── */
-    --bg: hsl(35, 25%, 96%);
-    --bg-alt: hsl(35, 20%, 93%);
-    --card-bg: hsl(40, 30%, 99%);
-    --text: hsl(215, 45%, 16%);
-    --text-muted: hsl(215, 12%, 52%);
- 
-    /* ── Primary ── */
-    --navy: hsl(215, 60%, 28%);
-    --navy-deep: hsl(215, 65%, 18%);
-    --navy-light: hsl(215, 50%, 40%);
- 
-    /* ── Category accents (full) ── */
+    --bg: hsl(185, 52%, 68%);
+    --bg-alt: hsl(185, 48%, 60%);
+    --card-bg: hsl(0, 0%, 100%);
+    --text: hsl(0, 0%, 8%);
+    --text-muted: hsl(0, 0%, 32%);
+
+    /* ── Primary (teal) ── */
+    --navy: hsl(185, 55%, 38%);
+    --navy-deep: hsl(185, 58%, 28%);
+    --navy-light: hsl(185, 45%, 78%);
+
+    /* ── Accents ── */
     --coral: hsl(10, 72%, 60%);
     --lavender: hsl(260, 45%, 70%);
     --sunshine: hsl(42, 88%, 62%);
     --sky: hsl(200, 65%, 60%);
     --mint: hsl(160, 42%, 55%);
- 
-    /* ── Category tints (~15-18% opacity feel on warm bg) ── */
-    --coral-tint: hsl(10, 72%, 60%, .15);
-    --lavender-tint: hsl(260, 45%, 70%, .15);
-    --sunshine-tint: hsl(42, 88%, 62%, .15);
-    --sky-tint: hsl(200, 65%, 60%, .15);
-    --mint-tint: hsl(160, 42%, 55%, .15);
- 
+
+    /* ── Tints ── */
+    --coral-tint: hsla(10, 72%, 60%, .12);
+    --lavender-tint: hsla(260, 45%, 70%, .12);
+    --sunshine-tint: hsla(42, 88%, 62%, .12);
+    --sky-tint: hsla(200, 65%, 60%, .12);
+    --mint-tint: hsla(160, 42%, 55%, .12);
+
     /* ── Functional ── */
-    --border: hsl(30, 15%, 89%);
-    --muted-surface: hsl(35, 15%, 94%);
+    --border: hsla(0, 0%, 0%, .10);
+    --muted-surface: hsl(185, 35%, 80%);
     --destructive: hsl(0, 50%, 55%);
     --success: hsl(155, 40%, 50%);
- 
+
     /* ── Elevation ── */
-    --shadow-sm: 0 2px 8px rgba(40, 40, 30, 0.05);
-    --shadow-md: 0 8px 28px rgba(40, 40, 30, 0.08);
-    --shadow-lg: 0 20px 60px rgba(40, 40, 30, 0.10);
+    --shadow-sm: 0 2px 10px rgba(0, 80, 80, 0.12);
+    --shadow-md: 0 8px 28px rgba(0, 80, 80, 0.16);
+    --shadow-lg: 0 20px 60px rgba(0, 80, 80, 0.18);
     --radius: 16px;
     --radius-sm: 10px;
   }
- 
+
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
- 
+
   html { scroll-behavior: smooth; }
- 
+
   body {
     font-family: 'DM Sans', sans-serif;
     color: var(--text);
@@ -60,13 +60,13 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
- 
+
   h1, h2, h3, h4 { font-family: 'Nunito', sans-serif; line-height: 1.2; }
- 
+
   /* ── NAV BAR ─────────────────────────── */
   .nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: var(--navy);
+    background: hsl(185, 55%, 38%);
     padding: 0 24px;
     height: 56px;
     display: flex; align-items: center; justify-content: space-between;
@@ -76,25 +76,24 @@
     font-weight: 900; font-size: 1.35rem;
     color: #fff; letter-spacing: -0.5px;
   }
-  .nav-brand span { color: var(--coral); }
+  .nav-brand span { color: hsl(0, 0%, 10%); }
   .nav-links { display: flex; gap: 28px; }
   .nav-links a {
-    color: hsla(0,0%,100%,.75); text-decoration: none;
+    color: hsla(0,0%,100%,.85); text-decoration: none;
     font-size: .875rem; font-weight: 500;
     transition: color .2s;
   }
   .nav-links a:hover { color: #fff; }
   .nav-cta {
-    background: var(--coral); color: #fff !important;
+    background: hsl(0, 0%, 8%); color: #fff !important;
     padding: 7px 18px; border-radius: 100px;
     font-weight: 600 !important;
   }
-  .nav-cta:hover { background: hsl(10, 78%, 55%) !important; }
- 
-  /* ── HERO ─────────────────────────────── */
+  .nav-cta:hover { background: hsl(0, 0%, 20%) !important; }
+
   .hero {
     margin-top: 56px;
-    background: linear-gradient(170deg, var(--navy-deep) 0%, var(--navy) 50%, hsl(215, 55%, 34%) 100%);
+    background: hsl(185, 52%, 68%);
     padding: 100px 24px 80px;
     text-align: center;
     position: relative;
@@ -104,17 +103,17 @@
     content: '';
     position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse 600px 400px at 20% 80%, hsla(260,45%,70%,.12), transparent),
-      radial-gradient(ellipse 500px 350px at 80% 20%, hsla(10,72%,60%,.10), transparent);
+      radial-gradient(ellipse 600px 400px at 15% 85%, hsla(185,60%,40%,.25), transparent),
+      radial-gradient(ellipse 500px 350px at 85% 15%, hsla(185,60%,85%,.20), transparent);
     pointer-events: none;
   }
   .hero-content { position: relative; max-width: 680px; margin: 0 auto; }
   .hero-badge {
     display: inline-block;
-    background: hsla(0,0%,100%,.1);
-    border: 1px solid hsla(0,0%,100%,.15);
-    color: hsla(0,0%,100%,.85);
-    font-size: .8rem; font-weight: 600;
+    background: hsla(0,0%,0%,.12);
+    border: 1px solid hsla(0,0%,0%,.15);
+    color: hsl(0, 0%, 10%);
+    font-size: .8rem; font-weight: 700;
     padding: 5px 16px; border-radius: 100px;
     margin-bottom: 28px;
     letter-spacing: .5px;
@@ -122,34 +121,33 @@
   }
   .hero h1 {
     font-size: clamp(2.2rem, 5vw, 3.4rem);
-    font-weight: 900; color: #fff;
+    font-weight: 900; color: hsl(0, 0%, 6%);
     margin-bottom: 18px;
     letter-spacing: -1px;
   }
   .hero h1 em {
     font-style: normal;
-    background: linear-gradient(135deg, var(--coral), var(--sunshine));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: hsl(0, 0%, 100%);
+    -webkit-text-fill-color: initial;
+    background: none;
   }
   .hero p {
-    font-size: 1.15rem; color: hsla(0,0%,100%,.72);
+    font-size: 1.15rem; color: hsl(0, 0%, 15%);
     max-width: 520px; margin: 0 auto 36px;
   }
   .hero-cta {
     display: inline-flex; align-items: center; gap: 10px;
-    background: var(--coral); color: #fff;
+    background: hsl(0, 0%, 8%); color: #fff;
     font-family: 'Nunito', sans-serif;
     font-weight: 700; font-size: 1.05rem;
     padding: 15px 36px; border-radius: 100px;
     text-decoration: none; border: none; cursor: pointer;
-    box-shadow: 0 6px 24px hsla(10,78%,50%,.35);
+    box-shadow: 0 6px 24px hsla(0,0%,0%,.20);
     transition: transform .2s, box-shadow .2s;
   }
-  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px hsla(10,78%,50%,.4); }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px hsla(0,0%,0%,.28); }
   .hero-cta svg { width: 18px; height: 18px; }
- 
+
   /* ── TOP FEATURES (3 icons) ──────────── */
   .top-features {
     display: flex; justify-content: center; gap: 48px;
@@ -168,7 +166,7 @@
   }
   .top-feature h4 { font-size: .95rem; font-weight: 700; margin-bottom: 4px; }
   .top-feature p { font-size: .82rem; color: var(--text-muted); }
- 
+
   /* ── SECTIONS (shared) ───────────────── */
   section { padding: 72px 24px; }
   .section-title {
@@ -182,8 +180,14 @@
     font-size: 1rem; color: var(--text-muted);
     max-width: 540px; margin: 0 auto 48px;
   }
+  .benefits .section-title,
+  .how-it-works .section-title,
+  .faq .section-title { color: hsl(0, 0%, 8%); }
+  .benefits .section-subtitle,
+  .how-it-works .section-subtitle,
+  .faq .section-subtitle { color: hsl(0, 0%, 18%); }
   .container { max-width: 960px; margin: 0 auto; }
- 
+
   /* ── BENEFITS ─────────────────────────── */
   .benefits { background: var(--bg); }
   .benefit-card {
@@ -194,9 +198,9 @@
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
     margin-bottom: 28px;
-    transition: box-shadow .25s;
+    transition: box-shadow .25s, transform .25s;
   }
-  .benefit-card:hover { box-shadow: var(--shadow-md); }
+  .benefit-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
   .benefit-card:nth-child(even) { flex-direction: row-reverse; }
   .benefit-visual {
     flex: 0 0 200px; height: 160px;
@@ -207,12 +211,14 @@
   .benefit-text { flex: 1; }
   .benefit-text h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
   .benefit-text p { color: var(--text-muted); font-size: .95rem; }
- 
+
   /* ── SOCIAL PROOF ────────────────────── */
-  .social-proof { background: var(--card-bg); }
+  .social-proof { background: hsl(185, 55%, 38%); }
+  .social-proof .section-title { color: #fff; }
+  .social-proof .section-subtitle { color: hsla(0,0%,100%,.75); }
   .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
   .testimonial {
-    background: var(--bg);
+    background: var(--card-bg);
     border-radius: var(--radius);
     padding: 32px 28px;
     position: relative;
@@ -222,9 +228,9 @@
     content: '\201C';
     font-family: 'Nunito', sans-serif;
     font-size: 4rem; font-weight: 900;
-    color: var(--lavender);
+    color: hsl(185, 52%, 68%);
     position: absolute; top: 12px; left: 22px;
-    opacity: .35; line-height: 1;
+    opacity: .5; line-height: 1;
   }
   .testimonial p {
     font-size: .93rem; color: var(--text);
@@ -242,7 +248,7 @@
   .testimonial-name { font-weight: 700; font-size: .88rem; }
   .testimonial-role { font-size: .78rem; color: var(--text-muted); }
   .stars { color: var(--sunshine); font-size: .85rem; margin-bottom: 14px; letter-spacing: 2px; }
- 
+
   /* ── HOW IT WORKS ────────────────────── */
   .how-it-works { background: var(--bg); }
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
@@ -258,7 +264,7 @@
   .step-number {
     width: 44px; height: 44px;
     border-radius: 50%;
-    background: var(--navy);
+    background: hsl(0, 0%, 8%);
     color: #fff;
     font-family: 'Nunito', sans-serif;
     font-weight: 800; font-size: 1.1rem;
@@ -268,20 +274,22 @@
   .step-icon { font-size: 2.4rem; margin-bottom: 14px; }
   .step h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
   .step p { font-size: .88rem; color: var(--text-muted); }
- 
+
   .how-details {
     max-width: 720px; margin: 48px auto 0;
     background: var(--card-bg);
     border-radius: var(--radius);
     padding: 36px 40px;
     box-shadow: var(--shadow-sm);
-    border-left: 4px solid var(--navy);
+    border-left: 4px solid hsl(0, 0%, 8%);
   }
   .how-details h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 10px; }
   .how-details p { color: var(--text-muted); font-size: .93rem; }
- 
+
   /* ── PRICING ─────────────────────────── */
-  .pricing { background: var(--card-bg); }
+  .pricing { background: hsl(185, 55%, 38%); }
+  .pricing .section-title { color: #fff; }
+  .pricing .section-subtitle { color: hsla(0,0%,100%,.75); }
   .pricing-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px; max-width: 880px; margin: 0 auto;
@@ -290,22 +298,22 @@
     border-radius: var(--radius);
     padding: 36px 28px;
     text-align: center;
-    border: 2px solid var(--border);
+    border: 2px solid hsla(0,0%,100%,.25);
     background: var(--card-bg);
     transition: transform .2s, box-shadow .2s;
     position: relative;
   }
   .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
   .pricing-card.featured {
-    border-color: var(--navy);
-    background: linear-gradient(180deg, hsl(215,60%,28%) 0%, hsl(215,55%,34%) 100%);
-    color: #fff;
+    border-color: hsl(0, 0%, 8%);
+    background: hsl(185, 52%, 68%);
+    color: hsl(0, 0%, 8%);
   }
-  .pricing-card.featured .pricing-label { color: hsla(0,0%,100%,.65); }
-  .pricing-card.featured .pricing-features li { color: hsla(0,0%,100%,.8); }
+  .pricing-card.featured .pricing-label { color: hsl(0, 0%, 20%); }
+  .pricing-card.featured .pricing-features li { color: hsl(0, 0%, 18%); }
   .pricing-badge {
     position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-    background: var(--coral); color: #fff;
+    background: hsl(0, 0%, 8%); color: #fff;
     font-size: .72rem; font-weight: 700;
     padding: 4px 16px; border-radius: 100px;
     text-transform: uppercase; letter-spacing: .5px;
@@ -320,25 +328,25 @@
     display: flex; align-items: flex-start; gap: 8px;
     color: var(--text-muted);
   }
-  .pricing-features li::before { content: '✓'; color: var(--mint); font-weight: 700; }
-  .pricing-card.featured .pricing-features li::before { color: var(--sunshine); }
+  .pricing-features li::before { content: '✓'; color: hsl(185, 55%, 38%); font-weight: 700; }
+  .pricing-card.featured .pricing-features li::before { color: hsl(0, 0%, 8%); }
   .pricing-btn {
     display: inline-block; width: 100%;
     padding: 12px 24px; border-radius: 100px;
     font-family: 'Nunito', sans-serif;
     font-weight: 700; font-size: .95rem;
-    text-decoration: none; border: 2px solid var(--navy);
-    color: var(--navy); background: transparent;
+    text-decoration: none; border: 2px solid hsl(185, 55%, 38%);
+    color: hsl(185, 55%, 38%); background: transparent;
     cursor: pointer; transition: all .2s;
   }
-  .pricing-btn:hover { background: var(--navy); color: #fff; }
+  .pricing-btn:hover { background: hsl(185, 55%, 38%); color: #fff; }
   .pricing-card.featured .pricing-btn {
-    background: var(--coral); border-color: var(--coral); color: #fff;
+    background: hsl(0, 0%, 8%); border-color: hsl(0, 0%, 8%); color: #fff;
   }
   .pricing-card.featured .pricing-btn:hover {
-    background: hsl(10, 78%, 55%); border-color: hsl(10, 78%, 55%);
+    background: hsl(0, 0%, 20%); border-color: hsl(0, 0%, 20%);
   }
- 
+
   /* ── FAQ ──────────────────────────────── */
   .faq { background: var(--bg); }
   .faq-list { max-width: 680px; margin: 0 auto; }
@@ -361,7 +369,7 @@
     color: var(--text);
     transition: color .2s;
   }
-  .faq-question:hover { color: var(--navy); }
+  .faq-question:hover { color: hsl(185, 55%, 38%); }
   .faq-question .chevron {
     font-size: .85rem; color: var(--text-muted);
     transition: transform .3s;
@@ -377,10 +385,10 @@
     padding: 0 24px 20px;
   }
   .faq-answer p { font-size: .92rem; color: var(--text-muted); }
- 
+
   /* ── FOOTER ──────────────────────────── */
   .footer {
-    background: var(--navy-deep);
+    background: hsl(185, 58%, 22%);
     padding: 48px 24px 28px;
     text-align: center;
   }
@@ -389,7 +397,7 @@
     font-weight: 900; font-size: 1.4rem;
     color: #fff; margin-bottom: 8px;
   }
-  .footer-brand span { color: var(--coral); }
+  .footer-brand span { color: hsl(185, 52%, 68%); }
   .footer p { color: hsla(0,0%,100%,.45); font-size: .82rem; }
   .footer-links { margin: 16px 0 24px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
   .footer-links a {
@@ -397,7 +405,7 @@
     text-decoration: none; transition: color .2s;
   }
   .footer-links a:hover { color: #fff; }
- 
+
   /* ── RESPONSIVE ──────────────────────── */
   @media (max-width: 700px) {
     .nav-links { display: none; }
@@ -408,7 +416,7 @@
     .hero { padding: 80px 20px 60px; }
     .top-features { gap: 24px; }
   }
- 
+
   /* ── ANIMATIONS ──────────────────────── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -425,7 +433,7 @@
 </style>
 </head>
 <body>
- 
+
 <!-- ═══ NAVBAR ═══ -->
 <nav class="nav">
   <div class="nav-brand"><span>R</span>eClaim</div>
@@ -437,7 +445,7 @@
     <a href="#" class="nav-cta">Get Started Free</a>
   </div>
 </nav>
- 
+
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-content">
@@ -450,50 +458,50 @@
     </a>
   </div>
 </section>
- 
+
 <!-- ═══ TOP 3 FEATURES ═══ -->
 <div class="top-features">
   <div class="top-feature animate-in delay-1">
-    <div class="top-feature-icon" style="background: hsla(260,45%,70%,.15);">🌙</div>
+    <div class="top-feature-icon" style="background: hsla(0,0%,100%,.35);">🌙</div>
     <h4>Better Sleep</h4>
     <p>Personalized sleep recommendations and nightly routines</p>
   </div>
   <div class="top-feature animate-in delay-2">
-    <div class="top-feature-icon" style="background: hsla(200,65%,60%,.15);">🧘</div>
+    <div class="top-feature-icon" style="background: hsla(0,0%,100%,.35);">🧘</div>
     <h4>Less Stress</h4>
     <p>Curated mental health tools matched to your stress level</p>
   </div>
   <div class="top-feature animate-in delay-3">
-    <div class="top-feature-icon" style="background: hsla(10,72%,60%,.15);">🏃</div>
+    <div class="top-feature-icon" style="background: hsla(0,0%,100%,.35);">🏃</div>
     <h4>Healthier Habits</h4>
     <p>Weekly goals with step-by-step guides you'll actually follow</p>
   </div>
 </div>
- 
+
 <!-- ═══ BENEFITS ═══ -->
 <section class="benefits" id="benefits">
   <div class="container">
     <h2 class="section-title">Why ReClaim?</h2>
     <p class="section-subtitle">The well-being app market is fragmented. You don't need another tracker — you need a guide.</p>
- 
+
     <div class="benefit-card animate-in">
-      <div class="benefit-visual" style="background: linear-gradient(135deg, hsla(260,45%,70%,.18), hsla(200,65%,60%,.18));">🎯</div>
+      <div class="benefit-visual" style="background: hsla(0,0%,100%,.5);">🎯</div>
       <div class="benefit-text">
         <h3>One Hub, Not Five Apps</h3>
         <p>Stop juggling disconnected apps for sleep, fitness, nutrition, focus, and mental health. ReClaim connects them all in one place and tells you exactly which tools fit your situation — with a transparent "why this is for you" explanation for every recommendation.</p>
       </div>
     </div>
- 
+
     <div class="benefit-card animate-in">
-      <div class="benefit-visual" style="background: linear-gradient(135deg, hsla(10,72%,60%,.18), hsla(42,88%,62%,.18));">📋</div>
+      <div class="benefit-visual" style="background: hsla(0,0%,100%,.5);">📋</div>
       <div class="benefit-text">
         <h3>Goals That Come With a Gameplan</h3>
         <p>Every weekly goal includes a concrete how-to guide — no vague "exercise more" platitudes. You'll get specific tactics like "set a wind-down alarm at 11pm, dim your lights, keep your phone out of the bedroom" so you actually know what to do next.</p>
       </div>
     </div>
- 
+
     <div class="benefit-card animate-in">
-      <div class="benefit-visual" style="background: linear-gradient(135deg, hsla(160,42%,55%,.18), hsla(200,65%,60%,.18));">👥</div>
+      <div class="benefit-visual" style="background: hsla(0,0%,100%,.5);">👥</div>
       <div class="benefit-text">
         <h3>Accountability Without the Pressure</h3>
         <p>Invite friends, track streaks together, and compete on a weekly leaderboard. Enough social pressure to stay consistent, but never preachy or guilt-driven. Earn points for check-ins, completed goals, and lessons — and see exactly how your score is calculated.</p>
@@ -501,43 +509,43 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ═══ SOCIAL PROOF ═══ -->
 <section class="social-proof">
   <div class="container">
     <h2 class="section-title">What Our Users Say</h2>
     <p class="section-subtitle">Real stories from young adults who took back control.</p>
- 
+
     <div class="testimonials">
       <div class="testimonial animate-in delay-1">
         <div class="stars">★★★★★</div>
         <p>"I used to have six different well-being apps and never opened any of them. ReClaim actually told me which ones I needed and why. My sleep went from 5.5 to 7 hours in three weeks."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar" style="background: hsla(260,45%,70%,.2);">🦊</div>
+          <div class="testimonial-avatar" style="background: hsla(185,52%,68%,.3);">🦊</div>
           <div>
             <div class="testimonial-name">Sofía M.</div>
             <div class="testimonial-role">University Student, 22</div>
           </div>
         </div>
       </div>
- 
+
       <div class="testimonial animate-in delay-2">
         <div class="stars">★★★★★</div>
         <p>"The weekly goals with actual step-by-step guides are a game changer. I finally cut my screen time by 2 hours a day because the app didn't just say 'use your phone less' — it showed me how."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar" style="background: hsla(160,42%,55%,.2);">🐢</div>
+          <div class="testimonial-avatar" style="background: hsla(185,52%,68%,.3);">🐢</div>
           <div>
             <div class="testimonial-name">Marco T.</div>
             <div class="testimonial-role">Junior Analyst, 25</div>
           </div>
         </div>
       </div>
- 
+
       <div class="testimonial animate-in delay-3">
         <div class="stars">★★★★☆</div>
         <p>"The leaderboard with my flatmates keeps me accountable without being annoying. We check in daily and the point breakdown is transparent — no mystery algorithms, just honest tracking."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar" style="background: hsla(10,72%,60%,.2);">🌸</div>
+          <div class="testimonial-avatar" style="background: hsla(185,52%,68%,.3);">🌸</div>
           <div>
             <div class="testimonial-name">Lena K.</div>
             <div class="testimonial-role">Graduate Student, 24</div>
@@ -547,13 +555,13 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ═══ HOW IT WORKS ═══ -->
 <section class="how-it-works" id="how-it-works">
   <div class="container">
     <h2 class="section-title">How It Works</h2>
     <p class="section-subtitle">From sign-up to results in under 3 minutes.</p>
- 
+
     <div class="steps">
       <div class="step animate-in delay-1">
         <div class="step-number">1</div>
@@ -574,20 +582,20 @@
         <p>Log your sleep, screen time, and mood in 30 seconds. Complete goals, earn points, climb the leaderboard, and watch your habits transform.</p>
       </div>
     </div>
- 
+
     <div class="how-details animate-in">
       <h3>Built Around Your Real Life</h3>
       <p>ReClaim doesn't replace the apps you already use — it connects them. We recommend best-in-class tools like Headspace, Sleep Cycle, Forest, Strava, and MyFitnessPal based on your unique profile, then help you build a system that actually sticks. The Learn tab gives you curated content from sources like TED, Harvard, and Sleep Foundation so you understand the science behind each habit.</p>
     </div>
   </div>
 </section>
- 
+
 <!-- ═══ PRICING ═══ -->
 <section class="pricing" id="pricing">
   <div class="container">
     <h2 class="section-title">Simple, Honest Pricing</h2>
     <p class="section-subtitle">Start free. Upgrade when you're ready for more.</p>
- 
+
     <div class="pricing-grid">
       <!-- Free -->
       <div class="pricing-card animate-in delay-1">
@@ -604,7 +612,7 @@
         </ul>
         <a href="#" class="pricing-btn">Get Started</a>
       </div>
- 
+
       <!-- Premium -->
       <div class="pricing-card featured animate-in delay-2">
         <div class="pricing-badge">Most Popular</div>
@@ -622,7 +630,7 @@
         </ul>
         <a href="#" class="pricing-btn">Start Free Trial</a>
       </div>
- 
+
       <!-- Unlimited -->
       <div class="pricing-card animate-in delay-3">
         <div class="pricing-icon">🚀</div>
@@ -641,13 +649,13 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ═══ FAQ ═══ -->
 <section class="faq" id="faq">
   <div class="container">
     <h2 class="section-title">Frequently Asked Questions</h2>
     <p class="section-subtitle">Everything you need to know before getting started.</p>
- 
+
     <div class="faq-list">
       <div class="faq-item open">
         <button class="faq-question">
@@ -658,7 +666,7 @@
           <p>ReClaim is a personalized well-being hub for young adults. It connects your existing health and productivity apps — sleep trackers, meditation apps, fitness tools — and recommends the right combination for your habits and goals. Think of it as a personal wellness advisor that also keeps you accountable with check-ins, streaks, and a social leaderboard.</p>
         </div>
       </div>
- 
+
       <div class="faq-item">
         <button class="faq-question">
           Does ReClaim replace my existing apps?
@@ -668,7 +676,7 @@
           <p>No — and that's the point. ReClaim is an orchestration layer, not another standalone tracker. It recommends best-in-class third-party apps like Headspace, Sleep Cycle, or Strava based on your profile, links out to them, and helps you build a system around the tools that already work. You keep what you love.</p>
         </div>
       </div>
- 
+
       <div class="faq-item">
         <button class="faq-question">
           How does the recommendation engine work?
@@ -678,7 +686,7 @@
           <p>During onboarding you share your sleep hours, screen time, stress level, activity frequency, and eating habits. Our scoring engine matches you to the most relevant apps from a curated database of 20+ tools across 5 categories. Every recommendation comes with a transparent explanation — you'll see exactly why each app was suggested.</p>
         </div>
       </div>
- 
+
       <div class="faq-item">
         <button class="faq-question">
           Is my data shared with third parties?
@@ -688,7 +696,7 @@
           <p>No. Your data stays on your device. The current version uses local storage only — no external servers, no analytics trackers, no data selling. When we add cloud sync (coming soon), your data will be encrypted and never shared with advertisers or third parties.</p>
         </div>
       </div>
- 
+
       <div class="faq-item">
         <button class="faq-question">
           Can I use ReClaim with friends?
@@ -701,7 +709,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
   <div class="footer-brand"><span>R</span>eClaim</div>
@@ -713,7 +721,7 @@
   </div>
   <p>&copy; 2026 ReClaim. Built for your well-being.</p>
 </footer>
- 
+
 <script>
   // FAQ accordion
   document.querySelectorAll('.faq-question').forEach(btn => {
@@ -724,7 +732,7 @@
       if (!wasOpen) item.classList.add('open');
     });
   });
- 
+
   // Scroll-triggered animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -734,18 +742,17 @@
       }
     });
   }, { threshold: 0.15 });
- 
+
   document.querySelectorAll('.animate-in').forEach(el => {
     el.style.animationPlayState = 'paused';
     observer.observe(el);
   });
- 
+
   // Unpause hero animations immediately
   document.querySelectorAll('.hero .animate-in').forEach(el => {
     el.style.animationPlayState = 'running';
   });
 </script>
- 
+
 </body>
 </html>
- 
